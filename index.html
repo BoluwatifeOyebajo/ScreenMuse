@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenMuse - Discover Your Next Favorite</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo">ScreenMuse</h1>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                 <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="moon-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+        </header>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="mood">Mood</label>
+                    <select id="mood" class="filter-select">
+                        <option value="">Mood</option>
+                            <option value="nostalgic">Nostalgic</option>
+                            <option value="lonely">Lonely</option>
+                            <option value="relaxed">Relaxed</option>
+                            <option value="adventurous">Adventurous</option>
+                            <option value="romantic">Romantic</option>
+                            <option value="bored">Bored</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="genre">Genre</label>
+                    <select id="genre" class="filter-select">
+                        <option value="">Any Genre</option>
+                        <option value="28">Action</option>
+                        <option value="12">Adventure</option>
+                        <option value="16">Animation</option>
+                        <option value="35">Comedy</option>
+                        <option value="80">Crime</option>
+                        <option value="99">Documentary</option>
+                        <option value="18">Drama</option>
+                        <option value="10751">Family</option>
+                        <option value="14">Fantasy</option>
+                        <option value="27">Horror</option>
+                        <option value="10402">Music</option>
+                        <option value="9648">Mystery</option>
+                        <option value="10749">Romance</option>
+                        <option value="878">Sci-Fi</option>
+                        <option value="53">Thriller</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="year">Year</label>
+                    <select id="year" class="filter-select">
+                        <option value="">Any Year</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2010-2014">2010-2014</option>
+                        <option value="2000-2009">2000-2009</option>
+                        <option value="1990-1999">1990-1999</option>
+                        <option value="1980-1989">1980-1989</option>
+                    </select>
+                </div>
+            </div>
+
+            <button class="search-btn" id="searchBtn">Search</button>
+
+            <div class="action-buttons">
+                <button class="discover-btn" id="discoverBtn">Discover Movies and Series</button>
+                <button class="watchlist-btn" id="watchlistBtn">❤️ My Watchlist</button>
+            </div>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="resultsSection">
+            <h2 class="section-title" id="resultsTitle">Recommended for You</h2>
+            <div class="movies-grid" id="moviesGrid"></div>
+            <div class="loading" id="loading">
+                <div class="spinner"></div>
+            </div>
+            <button class="load-more-btn" id="loadMoreBtn">More</button>
+        </section>
+
+        <!-- Watchlist Section -->
+        <section class="watchlist-section hidden" id="watchlistSection">
+            <h2 class="section-title">My Watchlist</h2>
+            <div class="movies-grid" id="watchlistGrid"></div>
+            <p class="empty-message hidden" id="emptyMessage">Your watchlist is empty. Start adding movies!</p>
+        </section>
+    </div>
+
+    <!-- Movie Modal -->
+    <div class="modal hidden" id="movieModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
